@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 
 const FULL_URL = "https://server.thigma1201.workers.dev/";
@@ -7,7 +8,7 @@ const FULL_URL = "https://server.thigma1201.workers.dev/";
 // with mode, you can have different configs for different environments - development, production, etc.
 export default defineConfig(({ mode }) => {
   return {
-    plugins: [react()],
+    plugins: [react(), tailwindcss()],
     base: mode === "production" ? FULL_URL : undefined,
     build: {
       outDir: "../server/dist",
